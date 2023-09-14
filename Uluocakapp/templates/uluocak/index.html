@@ -1,0 +1,346 @@
+{% extends "uluocak/base.html" %}
+{% load static %}
+{% block title %}
+    Anasayfa
+{% endblock title %}
+
+
+{% block content %}
+    <!-- Revolution Slider -->
+    <div class="rev_slider_wrapper">
+        <div class="rev_slider" id="slider-2" data-version="5.0">
+            <ul>
+                <!-- SLIDE 1 -->
+                <li data-fstransition="fade"
+                    data-transition="fade"
+                    data-easein="default"
+                    data-easeout="default"
+                    data-slotamount="1"
+                    data-masterspeed="1200"
+                    data-delay="8000"
+                    data-title="Sedona Theater"
+                    >
+                    <!-- MAIN IMAGE -->
+                    <img src="{% static 'uluocak/img/revolution/home-2/1.png' %}"
+                        alt=""
+                        data-bgrepeat="no-repeat"
+                        data-bgfit="cover"
+                        data-bgparallax="7"
+                        class="rev-slidebg"
+                        >
+
+                    <!-- HERO TITLE -->
+                    <div class="tp-caption hero-text"
+                        data-x="40"
+                        data-y="center"
+                        data-voffset="[-70,-90,-120,-120]"
+                        data-fontsize="[72,62,52,40]"
+                        data-lineheight="[72,62,52,40]"
+                        data-width="[none, none, none, 300]"
+                        data-whitespace="[nowrap, nowrap, nowrap, normal]"
+                        data-frames='[{
+                            "delay":1000,
+                            "speed":900,
+                            "frame":"0",
+                            "from":"y:150px;opacity:0;",
+                            "ease":"Power3.easeOut",
+                            "to":"o:1;"
+                            },{
+                            "delay":"wait",
+                            "speed":1000,
+                            "frame":"999",
+                            "to":"opacity:0;","ease":"Power3.easeOut"
+                        }]'
+                        data-splitout="none">ULUOCAK Mimarlık<span class="hero-dot">.</span>
+                    </div>
+
+                    <!-- HERO SUBTITLE -->
+                    <div class="tp-caption small-text"
+                        data-x="45"
+                        data-y="center"
+                        data-voffset="[30,10,-30,30]"
+                        data-fontsize="[21,21,21,21]"
+                        data-lineheight="34"
+                        data-width="[none, none, none, 300]"
+                        data-whitespace="[nowrap, nowrap, nowrap, normal]"
+                        data-frames='[{
+                            "delay":1100,
+                            "speed":900,
+                            "frame":"0",
+                            "from":"y:150px;opacity:0;",
+                            "ease":"Power3.easeOut",
+                            "to":"o:1;"
+                            },{
+                            "delay":"wait",
+                            "speed":1000,
+                            "frame":"999",
+                            "to":"opacity:0;","ease":"Power3.easeOut"
+                        }]'
+                        >Geleceğe Güvenle Yatırım Yapın,<br>Kentinizle Değişime İmza Atın!
+                    </div>
+
+                    <!-- BUTTON -->
+                    <div class="tp-caption"
+                            data-x="45"
+                            data-y="center"
+                            data-voffset="[130,110,70,160]"
+                            data-lineheight="55"
+                            data-hoffset="0"
+                            data-frames='[{
+                                "delay":1200,
+                                "speed":900,
+                                "frame":"0",
+                                "from":"y:150px;opacity:0;",
+                                "ease":"Power3.easeOut",
+                                "to":"o:1;"
+                                },{
+                                "delay":"wait",
+                                "speed":1000,
+                                "frame":"999",
+                                "to":"opacity:0;","ease":"Power3.easeOut"
+                            }]'
+                            ><a href='#projects' class='btn btn--lg btn--color'>Projeler</a>
+                    </div>
+
+                </li> <!-- end slide 1 -->
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- Benefits -->
+    <section class="section-wrap pt-0 pb-0 pt-sm-40 offset-top-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="benefit">
+                        <i class="icon-House-9 benefit__icon"></i>
+                        <h4 class="benefit__title">Değerlenen Tasarım</h4>
+                        <p class="benefit__text">
+                            Her proje için, projenize katma değer yaratacağını bildiğimiz projeler tasarlıyoruz. </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit">
+                        <i class="icon-Brick-Gouse benefit__icon"></i>
+                        <h4 class="benefit__title">Yüksek Kaliteli Malzemeler</h4>
+                        <p class="benefit__text">Projelerimizde yüksek kaliteli malzemelerle güvenilirliği en üst düzeye çıkarıyoruz.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit">
+                        <i class="icon-Cup-1 benefit__icon"></i>
+                        <h4 class="benefit__title">35 Yıllık Deneyim</h4>
+                        <p class="benefit__text">35 yıllık sahip olduğumuz deneyimle projelerinizi güvenle şekillendiriyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- end benefits -->
+
+    <!-- Portfolio -->
+    <section class="section-wrap" id="projects">
+        <div class="container">
+            <div class="title-row mb-48">
+                <p class="subtitle">Projelerimiz</p>
+                <h2 class="section-title">Öne Çıkan Çalışmalarımız</h2>
+            </div>
+
+            <div class="projects">
+                {% for project in projects %}
+                    <div class="project-1">
+                        <div class="project-1__container">
+                            <div class="project__img-holder hover-scale">
+                                <img src="{{ project.image.url }}" alt="" class="project__img">
+                            </div>
+                        </div>
+                        
+                        <div class="project-1__description-holder">
+                            <div class="project-1__description">
+                                <h3 class="project-1__title">{{ project.title }}</h3>
+                                <p class="project-1__text">{{ project.description }}</p>
+                                
+                            </div>
+                        </div>
+                    </div> <!-- end project -->
+                {% endfor %}
+            </div>					
+
+        </div>
+    </section> <!-- end portfolio -->
+
+    <!-- Services -->
+    <div class="services">
+        <div class="row no-gutters">
+            <div class="col-lg-3">
+                <a href="#" class="service service--dark-overlay">
+                    <div class="service__img" style="background-image: url({% static 'uluocak/img/services/1.png' %});"></div>
+                    <h3 class="service__title">Mimari Proje</h3>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="#" class="service service--dark-overlay">
+                    <div class="service__img" style="background-image: url({% static 'uluocak/img/services/2.png' %});"></div>
+                    <h3 class="service__title">Anahtar Teslim</h3>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="#" class="service service--dark-overlay">
+                    <div class="service__img" style="background-image: url({% static 'uluocak/img/services/3.png' %});"></div>
+                    <h3 class="service__title">Kat Karşılığı</h3>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <a href="#" class="service service--dark-overlay">
+                    <div class="service__img" style="background-image: url({% static 'uluocak/img/services/4.png' %});"></div>
+                    <h3 class="service__title">Ekspertiz</h3>
+                </a>
+            </div>
+        </div>
+    </div> <!-- end services -->
+
+    <!-- Team -->
+    <section class="section-wrap" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="blog-grid__title-col d-flex flex-column mb-lg-48">
+                        <div class="title-row">
+                            <p class="subtitle">Ekibimiz</p>
+                            <h2 class="section-title">Uzmanlarımız</h2>
+                            <p>Siz Hayal Edin, Biz İnşa Edelim.</p>
+                        </div>
+                    </div>							
+                </div>
+
+                <div class="col-lg-8 offset-lg-1">
+                    <div class="slick-slider slick-team">
+                        {% for team in teams %}
+                            <div class="team-col">
+                                <div class="team hover-trigger">
+                                    <div class="team__img-holder">
+                                        
+                                        {% if team.image %}
+                                            <img src="{{ team.image.url }}" alt="" class="team__img">
+                                        {% endif %}
+                                        <div class="hover-overlay">
+                                            <div class="team__details text-center">
+                                                <div class="socials socials--white">
+                                                    <a href="{{ team.twitter_link }}" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter"></i></a>
+                                                    <a href="{{ team.facebook_link }}" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook"></i></a>
+                                                    <a href="{{ team.instagram_link }}" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram"></i></a>
+                                                    <a href="{{ team.linkedin_link }}" class="social social-linkedin" aria-label="linkedin" title="linkedin" target="_blank"><i class="ui-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>										
+                                    <h5 class="team__name">{{ team.fullname }}</h5>
+                                    <span class="team__occupation">{{ team.job }}</span>								
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div> <!-- end slider -->
+                </div>
+
+            </div>
+        </div>
+    </section> <!-- end team -->
+
+
+    <!-- Testimonials -->
+    <section class="section-wrap bg-dark-overlay" style="background-image: url(img/testimonials/bg.jpg);">
+        <div class="container">
+            <div class="title-row text-center">
+                <p class="subtitle">Görüşler</p>
+                <h2 class="section-title">Müşterilerimiz hakkımızda ne söylüyor</h2>
+                <i class="quote">“</i>
+            </div>					
+
+            <div class="slick-slider slick-testimonials">
+                {% for testimonial in testimonials %}
+                    <div class="testimonial clearfix">
+                        <div class="testimonial__body">
+                            <p class="testimonial__text">“{{ testimonial.message }}”</p>
+                        </div>
+                        <div class="testimonial__info">
+                            <span class="testimonial__author">{{ testimonial.fullname }}</span>
+                            <span class="testimonial__company">{{ testimonial.company }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div> <!-- end slider -->
+
+        </div>
+    </section> <!-- end testimonials -->
+
+    <!-- Contact -->
+    <section class="section-wrap" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-lg-48">
+                    <div class="title-row">
+                        <p class="subtitle">iletişim</p>
+                        <h2 class="section-title">Bize Ulaş</h2>
+                        <p>Hayallerini bekletme...</p>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contact-form" class="contact-form material" method="POST">
+                        {% csrf_token %}
+                        <!-- Name -->
+                        <div class="material__form-group form-group">
+                            <input type="text" name="name" id="name" class="form-input material__input" required="">
+                            <label for="Ad-soyad" class="material__label">Ad-soyad
+                                <abbr title="required" class="required">*</abbr>
+                            </label>
+                            <span class="material__underline"></span>
+                        </div>
+                        
+                        <!-- Phone -->
+                        <div class="material__form-group form-group">
+                            <input type="phone" name="phone" id="phone" class="form-input material__input" required="">
+                            <label for="Telefon" class="material__label">Telefon
+                                <abbr title="required" class="required">*</abbr>
+                            </label>
+                            <span class="material__underline"></span>
+                        </div>
+                        <!-- Email -->
+                        <div class="material__form-group form-group">
+                            <input type="email" name="email" id="email" class="form-input material__input" required="">
+                            <label for="email" class="material__label">Email
+                                <abbr title="required" class="required">*</abbr>
+                            </label>
+                            <span class="material__underline"></span>
+                        </div>
+
+                        <!-- Subject -->
+                        <div class="material__form-group form-group">
+                            <input type="text" name="subject" id="subject" class="form-input material__input">
+                            <label for="Konu" class="material__label">Konu
+                            </label>
+                            <span class="material__underline"></span>
+                        </div>							
+
+                        <div class="material__form-group form-group">
+                            <textarea id="message" name="message" rows="7" class="form-input material__input" required=""></textarea>
+                            <label for="mesaj" class="material__label">Mesaj
+                                <abbr title="required" class="required">*</abbr>
+                            </label>
+                            <span class="material__underline"></span>
+                        </div>								
+                    
+                        <input type="submit" class="btn btn--lg btn--color btn--button" value="Mesajı Gönder" id="submit-message">
+                        <div id="msg" class="message"></div>
+                    </form>
+                </div>						
+
+                <div class="col-lg-7 offset-lg-1">
+                    <!-- Google Map -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.651877287818!2d28.891428609863606!3d40.989103156513046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabb655305b3b5%3A0x62f5675dd41918d0!2sUluocak%20Mimarlik!5e0!3m2!1str!2str!4v1694684364005!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section> <!-- end contact -->
+{% endblock content %}
+    

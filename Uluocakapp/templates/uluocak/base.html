@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}{% endblock title %} | ULUOCAK MİMARLIK</title>
+
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Barlow:400,600%7COpen+Sans:400,400i,700' rel='stylesheet'>
+
+	<!-- Css -->
+	<link rel="stylesheet" href="{% static 'uluocak/css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'uluocak/css/font-icons.css' %}" />
+	<link rel="stylesheet" href="{% static 'uluocak/revolution/css/settings.css' %}" />
+	<link rel="stylesheet" href="{% static 'uluocak/css/style.css' %}" />
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="{% static 'uluocak/img/favicon.ico' %}">
+	<link rel="apple-touch-icon" href="{% static 'uluocak/img/apple-touch-icon.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'uluocak/img/apple-touch-icon-72x72.png' %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'uluocak/img/apple-touch-icon-114x114.png' %}">
+
+</head>
+
+<body>
+
+	<!-- Preloader -->
+	<div class="loader-mask">
+		<div class="loader">
+			"Loading..."
+		</div>
+	</div>
+
+	<main class="main-wrapper">
+
+		<!-- Top Bar -->
+		{% include 'uluocak/part/__topheader.html' %}
+        <!-- end top bar -->
+
+		<!-- Navigation -->
+        {% include 'uluocak/part/__header.html' %}
+		<!-- end navigation -->
+
+
+		<div class="content-wrapper oh">
+
+			
+            {% block content %}{% endblock content %}
+                
+            <!-- Footer -->
+			{% include 'uluocak/part/__footer.html' %}
+            <!-- end footer -->
+
+			<div id="back-to-top">
+				<a href="#top"><i class="ui-arrow-up"></i></a>
+			</div>
+
+		</div> <!-- end content wrapper -->
+	</main> <!-- end main wrapper -->
+
+
+	<!-- jQuery Scripts -->
+	<script src="{% static 'uluocak/js/jquery.min.js' %}"></script>
+	<script src="{% static 'uluocak/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'uluocak/js/plugins.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+	<script src="{% static 'uluocak/js/rev-slider.js' %}"></script>
+	<!-- 
+		1. Generate your key here - https://developers.google.com/maps/documentation/javascript/get-api-key
+		2. Paste your key in the script below.
+	-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoQ3_zzRfW-hYspkwr5kvwCwLPGZsN4nw"></script>
+	<script src="{% static 'uluocak/js/gmap3.min.js' %}"></script>
+	<script src="{% static 'uluocak/js/google-map.js' %}"></script>
+	<script src="{% static 'uluocak/js/scripts.js' %}"></script>
+
+
+	<!-- Rev Slider Offline Scripts -->
+	<script src="{% static 'uluocak/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+	<script src="{% static 'uluocak/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+	
+
+</body>
+</html>

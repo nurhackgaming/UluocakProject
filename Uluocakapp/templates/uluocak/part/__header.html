@@ -1,0 +1,96 @@
+<header class="nav nav--boxed">
+    <div class="nav__holder nav--sticky">
+        <div class="nav__container container">
+            <div class="nav__container-box">
+                <div class="flex-parent">
+
+                    <!-- Search form -->
+                    <form role="search" method="get" class="nav__search-form">
+                        <input type="search" class="nav__search-input" id="nav__search-input" placeholder="Type &amp; Hit Enter">
+                        <i class="ui-close nav__search-close" id="nav__search-close"></i>
+                    </form>
+
+                    <div class="nav__header">
+                        <!-- Logo -->
+                        <a href="index.html" class="logo-container flex-child">
+                            <img class="logo" src="img/logo.png" srcset="img/logo.png 1x, img/logo@2x.png 2x" alt="logo">
+                        </a>
+
+                        <!-- Mobile toggle -->
+                        <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="nav__icon-toggle-bar"></span>
+                            <span class="nav__icon-toggle-bar"></span>
+                            <span class="nav__icon-toggle-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Navbar -->
+                    <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
+                        <ul class="nav__menu">
+                            <li class="nav__dropdown">
+                                <a href="{% url 'index' %}" aria-haspopup="true">Anasayfa</a>
+                                
+                            </li>
+                            <li class="nav__dropdown">
+                                <a href="{% url 'about' %}" aria-haspopup="true">Süleyman ULUOCAK</a>
+                                
+                            </li>
+                            <li class="nav__dropdown">
+                                <a href="{% url 'index' %}#team" aria-haspopup="true">Ekibimiz</a>
+                                
+                            </li>
+                            <li class="nav__dropdown">
+                                <a href="{% url 'index' %}#projects" aria-haspopup="true">Projelerimiz</a>
+                                
+                            </li>
+                            <li class="nav__dropdown">
+                                <a href="{% url 'index' %}#contact" aria-haspopup="true">İletişim</a>
+                                
+                            </li>
+                        </ul> <!-- end menu -->
+
+                        <!-- Mobile Search -->
+                        <div class="nav__search-mobile d-lg-none">                            
+                            <form role="search" method="get" class="search-form relative">
+                                <input type="search" class="search-input" placeholder="Search" value="" name="s">
+                                <button type="submit" class="search-button" aria-label="Search button"><i class="ui-search search-icon"></i></button>
+                            </form>
+                        </div>
+
+                        <!-- Mobile Phone -->
+                        <div class="nav__phone nav__phone--mobile d-lg-none">
+                            <span class="nav__phone-text">Telefon:</span>
+                            <a href="tel:02125824345" class="nav__phone-number">(212) 582 43 45</a>
+                        </div>							
+
+                        <!-- Mobile Email -->
+                        <div class="nav__email nav__email--mobile d-lg-none">
+                            <span class="nav__email-text">Email:</span>
+                            <a href="mailto:bilgi@uluocak.com.tr" class="nav__email-email">bilgi@uluocak.com.tr</a>
+                        </div>
+
+                        <!-- Mobile Socials -->
+                        <div class="nav__socials nav__socials--mobile d-lg-none">
+                            <div class="socials">
+                                <a href="#" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter"></i></a>
+                                <a href="#" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook"></i></a>
+                                <a href="#" class="social social-youtube" aria-label="youtube" title="google plus" target="_blank"><i class="ui-youtube"></i></a>
+                                <a href="#" class="social social-instagram" aria-label="instagram" title="instagram" target="_blank"><i class="ui-instagram"></i></a>
+                            </div>
+                        </div>
+                    </nav> <!-- end nav-wrap -->
+
+                    <!-- Search -->
+                    <div class="nav__search nav--align-right d-lg-block d-none">
+                        <a href="#" class="nav__search-link" id="nav__search-trigger">
+                            <i class="ui-search"></i>
+                        </a>
+                    </div>
+
+                </div> <!-- end flex-parent -->
+            </div> <!-- end nav container box -->
+        </div> <!-- end container -->
+
+    </div>
+</header> 
